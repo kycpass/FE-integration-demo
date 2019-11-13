@@ -1,0 +1,42 @@
+.webhook-list-json {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  white-space: pre-wrap;
+}
+
+.section-header {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.section--dashboard {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #111;
+}
+
+.section--dashboard:last-child {
+  border-bottom: 0px;
+}
+
+.section-container--dashboard {
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+}
+
+.section--dashboard input[type="text"] {
+  color: #111;
+  max-width: 400px;
+  width: 100%;
+  min-width: 300px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.section--dashboard .btn{
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid #fff;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 10px;
+}
