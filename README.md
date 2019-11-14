@@ -14,10 +14,14 @@ If you want to interact with your local backend, replace `DEMO_APIENDPOINT` with
 
 ## Integrate with your existing project:  
 If you want to attach SDK implementation with your existing project, render the component `EntifySDK` in your desired react route. Look at `./src/EntifySDK`  
+Make sure you import web sdk script to your index.html file.  
+```
+<script type="text/javascript" src="https://cdn.kyc-pass.com/web-sdk-0.0.2.min.js"></script>
+```  
 
 ---
 
-In the demo app, it'll mount the SDK and render playground. Once the app is running, you can  walk through the verification flow.  
+In the demo app, it'll mount the SDK and render playground to interact with the webhooks. Once the app is running, you can  go through the verification flow.  
 1. Register a webhook where you can receive incoming payload.  
 > For testing purpose, we already created an url with handler attached. `/webhookHandler`  
 **NOTE:** You can not register your localhost url as webhook. Host your backend or use https://ngrok.com/ to create tunnel.
