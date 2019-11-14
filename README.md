@@ -14,6 +14,10 @@ If you want to interact with your local backend, replace `DEMO_APIENDPOINT` with
 
 ## Integrate with your existing project:  
 If you want to attach SDK implementation with your existing project, render the component `EntifySDK` in your desired react route. Look at `./src/EntifySDK`  
+Make sure you import web sdk script to your index.html file.  
+```
+<script type="text/javascript" src="https://cdn.kyc-pass.com/web-sdk-0.0.2.min.js"></script>
+```  
 
 ---
 
