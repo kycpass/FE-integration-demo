@@ -10,7 +10,6 @@ const mountSdk = (token, containerId, callback, errCallback) => {
   });
 };
 
-
 class EntifySDK extends React.Component {
   constructor(props) {
     super(props);
@@ -30,12 +29,11 @@ class EntifySDK extends React.Component {
         loading: false
       })
       // once token is received mound the SDK
-      const success = ()=>{
-        // sdk successfully mounted
+      const success = () => {
         console.log('Verification successful!');
       }
 
-      const error = (err)=>{
+      const error = (err) => {
         // Something wrong happened!
         console.error(err);
       }
@@ -46,6 +44,7 @@ class EntifySDK extends React.Component {
       alert('Something went worng!');
     }
   }
+
   render() {
     return(
       <div id="sdk_mount">
@@ -55,8 +54,7 @@ class EntifySDK extends React.Component {
   }
 }
 
-
-const EntifyVerification = ()=>{
+const EntifyVerification = () => {
   return(
     <div>
       <div className="section-header">Verify</div>

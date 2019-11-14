@@ -31,7 +31,8 @@ const DashboardContainer = () => {
       alert(webhooks.message);
       return
     }
-    fetchWebhooks()
+    fetchWebhooks();
+    alert('Successfully created!');
   }
 
   const updateWebhook = async (data, webhookId) => {
@@ -41,7 +42,8 @@ const DashboardContainer = () => {
       alert(webhooks.message);
       return
     }
-    fetchWebhooks()
+    fetchWebhooks();
+    alert('Successfully updated!');
   }
 
   const getWebhook = async (webhookId) => {
@@ -50,7 +52,6 @@ const DashboardContainer = () => {
       alert(webhooks.message);
       return
     }
-
     return webhooks
   }
 
@@ -92,7 +93,7 @@ const WebhookLists = (props) => {
   )
 }
 
-const CreateWebhook = (props)=>{
+const CreateWebhook = (props) => {
   const [text, setText] = useState("");
   return(
     <div className="section--dashboard">
@@ -110,7 +111,7 @@ const CreateWebhook = (props)=>{
   )
 }
 
-const UpdateWebhook = (props)=>{
+const UpdateWebhook = (props) => {
   const [text, setText] = useState("");
   const [webhookId, setWebhookId] = useState("");
   return(
@@ -138,7 +139,7 @@ const UpdateWebhook = (props)=>{
 }
 
 
-const WebHookDetail = (props)=>{
+const WebHookDetail = (props) => {
   const [ webhookId, setText ] = useState("");
   const [ webhookDetail, setWebhookDetail ] = useState("");
   const fetchWebhookDetail = async (webhookId)=>{
