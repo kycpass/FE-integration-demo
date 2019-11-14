@@ -4,6 +4,7 @@ This project is to demonstrate how to integrate web-sdk in your website, it give
 
 To try out the demo, you can visit the link: https://fe-sandbox-demo.herokuapp.com/  
 This app interacts with [demo backend](https://github.com/kycpass/BE-sandbox)  
+![Entify-integration-1](https://fe-sandbox-demo.herokuapp.com/efy-int.png?v=1.0)
 
 ## Setup:  
 This project is bootstrapped with create-react-app.  
