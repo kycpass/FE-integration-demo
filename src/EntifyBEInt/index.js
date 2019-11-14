@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import call from '../request';
+import call from './request';
 import './index.css';
 import IncomingPayloads from './webhookListener';
 
@@ -27,7 +27,7 @@ const DashboardContainer = () => {
   const createWebhook = async (data) => {
     const payload = extractData(data);
     const webhooks = await call({path: 'entifyme/createWebhook', data: payload, method:"post"});
-    if(webhooks.status == 'fail') {
+    if(webhooks.status === 'fail') {
       alert(webhooks.message);
       return
     }
@@ -38,7 +38,7 @@ const DashboardContainer = () => {
   const updateWebhook = async (data, webhookId) => {
     const payload = extractData(data);
     const webhooks = await call({path: `entifyme/updateWebhook/${webhookId}`, data: payload, method:"put"});
-    if(webhooks.status == 'fail') {
+    if(webhooks.status === 'fail') {
       alert(webhooks.message);
       return
     }
@@ -48,7 +48,7 @@ const DashboardContainer = () => {
 
   const getWebhook = async (webhookId) => {
     const webhooks = await call({path: `entifyme/getWebhook/${webhookId}`});
-    if(webhooks.status == 'fail') {
+    if(webhooks.status === 'fail') {
       alert(webhooks.message);
       return
     }

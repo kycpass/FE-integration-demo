@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import call, { DEMO_APIENDPOINT } from '../request';
+import React, { useState } from 'react';
+import call from './request';
+import { DEMO_APIENDPOINT } from '../const';
 
 const IncomingPayloads = (props) => {
   const [incomingPL, setincomingPL] = useState([]);
@@ -22,12 +23,12 @@ const IncomingPayloads = (props) => {
       <div className="webhook-list-json">
         <br/>
         {
-          loading && 'Loading..'
-        }
-        {
           incomingPL.map((i,d) => {
             return <div key={d}>{JSON.stringify(i, null, 4)}</div>
           })
+        }
+        {
+          loading && 'Loading..'
         }
       </div>
       <div className="btn" onClick={fetchIncomingPL}>Refresh</div>

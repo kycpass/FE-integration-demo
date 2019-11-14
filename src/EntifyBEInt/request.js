@@ -1,5 +1,4 @@
-export const DEMO_APIENDPOINT = `https://be-sandbox-demo.herokuapp.com/`;
-
+import { DEMO_APIENDPOINT } from '../const';
 const call = async ({url=DEMO_APIENDPOINT, path="", method="get", data=null}) => {
   let opts = {
     method,
@@ -7,11 +6,12 @@ const call = async ({url=DEMO_APIENDPOINT, path="", method="get", data=null}) =>
       'Content-Type': 'application/json'
     }
   }
+
   if(data) {
     opts.body = JSON.stringify(data)
   }
 
-  try{
+  try {
     const response = await fetch(url+path, opts);
     const responseJson = await response.json()
     return responseJson;

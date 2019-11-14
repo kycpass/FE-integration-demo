@@ -1,5 +1,5 @@
 import React from 'react';
-import call from '../request';
+import { DEMO_APIENDPOINT } from '../const';
 
 const mountSdk = (token, containerId, callback, errCallback) => {
   window.entify.mount({
@@ -10,6 +10,23 @@ const mountSdk = (token, containerId, callback, errCallback) => {
   });
 };
 
+const getToken = async () => {
+  let opts = {
+    method: "post",
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  try {
+    const response = await fetch(`${DEMO_APIENDPOINT}entifyme/getToken`, opts);
+    const responseJson = await response.json()
+    return responseJson;
+  }catch(err) {
+    throw err
+  }
+}
+
 class EntifySDK extends React.Component {
   constructor(props) {
     super(props);
@@ -19,12 +36,12 @@ class EntifySDK extends React.Component {
   }
 
   async componentDidMount() {
-    try{
+    try {
       // get the jwt token from Entify.
       // following request will make a call to your local server, local server will use
       // stored api token to get JWT from entify server.
       // NOTE: API_TOKEN should not be used in client side for security purpose.
-      const {token} = await call({method:"post", path:'entifyme/getToken'});
+      const {token} = await getToken();
       this.setState({
         loading: false
       })
